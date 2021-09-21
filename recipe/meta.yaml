@@ -1,5 +1,5 @@
 {% set name = "types-maxminddb" %}
-{% set version = "0.1.3" %}
+{% set version = "1.5.0" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/types-maxminddb-{{ version }}.tar.gz
-  sha256: 839f8db86205ad13a8de0a2ca4a69bf1ffa18828324f305c09798224b880532f
+  sha256: 9146df7098d834d5f584d2393af85ef9294c67a16ace991f1635a2aa331f7854
 
 build:
   number: 0
