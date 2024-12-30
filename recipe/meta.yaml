@@ -7,23 +7,25 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/types-maxminddb-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/types-maxminddb-{{ version }}.tar.gz
   sha256: 9146df7098d834d5f584d2393af85ef9294c67a16ace991f1635a2aa331f7854
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python {{ python_min }}
   run:
-    - python >=3.6
+    - python >={{ python_min }}
     - types-ipaddress
 
 test:
+  requires:
+    - python {{ python_min }}
   commands:
     - test -f $SP_DIR/maxminddb-stubs/__init__.pyi
 
